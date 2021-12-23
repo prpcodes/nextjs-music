@@ -1,36 +1,51 @@
-import NextImage from 'next/image';
-import NextLink from 'next/link';
-import { Box, List, ListItem, ListIcon, Divider, Center, LinkBox, LinkOverlay } from '@chakra-ui/layout';
-import { MdHome, MdSearch, MdLibraryMusic, MdPlaylistAdd, MdFavorite } from 'react-icons/md';
+import NextImage from "next/image";
+import NextLink from "next/link";
+import {
+  Box,
+  List,
+  ListItem,
+  ListIcon,
+  Divider,
+  Center,
+  LinkBox,
+  LinkOverlay,
+} from "@chakra-ui/layout";
+import {
+  MdHome,
+  MdSearch,
+  MdLibraryMusic,
+  MdPlaylistAdd,
+  MdFavorite,
+} from "react-icons/md";
 
 const navMenu = [
   {
-    name: 'Home',
+    name: "Home",
     icon: MdHome,
-    route: '/',
+    route: "/",
   },
   {
-    name: 'Search',
+    name: "Search",
     icon: MdSearch,
-    route: '/search',
+    route: "/",
   },
   {
-    name: 'Your Library',
+    name: "Your Library",
     icon: MdLibraryMusic,
-    route: '/library',
+    route: "/library",
   },
 ];
 
 const musicMenu = [
   {
-    name: 'Create Playlist',
+    name: "Create Playlist",
     icon: MdPlaylistAdd,
-    route: '/',
+    route: "/",
   },
   {
-    name: 'Favorites',
+    name: "Favorites",
     icon: MdFavorite,
-    route: '/favorites',
+    route: "/favorites",
   },
 ];
 
@@ -38,7 +53,13 @@ const playlists = new Array(30).fill(1).map((_, i) => `Playlist ${i + 1}`);
 
 const Sidebar = () => {
   return (
-    <Box width="100%" height="calc(100vh - 100px)" bg="black" paddingX="5px" color="gray">
+    <Box
+      width="100%"
+      height="calc(100vh - 100px)"
+      bg="black"
+      paddingX="5px"
+      color="gray"
+    >
       <Box paddingY="20px" height="100%">
         <Box width="120px" marginBottom="20px" paddingX="20px">
           <NextImage src="/logo.svg" height={60} width={120} />
@@ -50,7 +71,11 @@ const Sidebar = () => {
                 <LinkBox>
                   <NextLink href={menu.route} passHref>
                     <LinkOverlay>
-                      <ListIcon as={menu.icon} color="white" marginRight="20px" />
+                      <ListIcon
+                        as={menu.icon}
+                        color="white"
+                        marginRight="20px"
+                      />
                       {menu.name}
                     </LinkOverlay>
                   </NextLink>
@@ -66,7 +91,11 @@ const Sidebar = () => {
                 <LinkBox>
                   <NextLink href={menu.route} passHref>
                     <LinkOverlay>
-                      <ListIcon as={menu.icon} color="white" marginRight="20px" />
+                      <ListIcon
+                        as={menu.icon}
+                        color="white"
+                        marginRight="20px"
+                      />
                       {menu.name}
                     </LinkOverlay>
                   </NextLink>
