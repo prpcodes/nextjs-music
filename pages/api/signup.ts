@@ -39,7 +39,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   //create cookie
   res.setHeader(
     "Set-Cookie",
-    cookie.serialize("PRP_ACCESS_TOKEN", token, {
+    cookie.serialize("TRAX_ACCESS_TOKEN", token, {
       httpOnly: true,
       maxAge: 8 * 60 * 60,
       path: "/",

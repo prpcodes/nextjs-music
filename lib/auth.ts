@@ -1,5 +1,4 @@
 import { useRouter } from "next/router";
-import { useRouter } from "next/router";
 import { NextApiResponse } from "next";
 import jwt from "jsonwebtoken";
 import { NextApiRequest } from "next";
@@ -7,7 +6,7 @@ import prisma from "./prisma";
 
 export const validateRoute = (handler) => {
   return async (req: NextApiRequest, res: NextApiResponse) => {
-    const { PRP_ACCESS_TOKEN: token } = req.cookies;
+    const { TRAX_ACCESS_TOKEN: token } = req.cookies;
 
     if (token) {
       let user;
